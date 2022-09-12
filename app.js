@@ -41,28 +41,28 @@ app.listen(port, () =>{
 
 
        
-    // To be included for database tests
+    To be included for database tests
 
-    //var mongoose =require('mongoose');
+    var mongoose =require('mongoose');
         
-        //  const bodyparser = require('bodyparser');
-        //  mangoose.connect('mongod://localhost/contactDance', {useNewUrlParser:true});
-    // const contactSchema = new mongoose.Schema({
-    //     name: String
-    //     phone: String
-    //     address: String
-    //     email: String
-    //     esc: String
-    //   });
+         const bodyparser = require('bodyparser');
+         mangoose.connect('mongod://localhost/contactDance', {useNewUrlParser:true});
+    const contactSchema = new mongoose.Schema({
+        name: String
+        phone: String
+        address: String
+        email: String
+        esc: String
+      });
 
-    //   const Contact = mongoose.model('Kitten', contactSchema);
+      const Contact = mongoose.model('Kitten', contactSchema);
 
-    //   const bodyparser = require(“body-parser”);
+      const bodyparser = require(“body-parser”);
 
-    //   app.post(‘/contact’, (req, res)=>{
-    //     var myData = new Contact(req.body);
-    //     myData.save().then(()=>{
-    //     res.send(“This item has been saved to the database”)
-    //     }).catch(()=>{
-    //     res.status(400).send(“item was not saved to the databse”)
-    // })
+      app.post(‘/contact’, (req, res)=>{
+        var myData = new Contact(req.body);
+        myData.save().then(()=>{
+        res.send(“This item has been saved to the database”)
+        }).catch(()=>{
+        res.status(400).send(“item was not saved to the databse”)
+    })
